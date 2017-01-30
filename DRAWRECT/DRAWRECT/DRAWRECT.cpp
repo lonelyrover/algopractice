@@ -3,11 +3,11 @@
 #include <vector>
 #include <algorithm>
 
-void insert(std::map<int, int>& count, int number)
+void increaseCount(std::map<int, int>& count, int number)
 {
 	auto element = count.find(number);
 	if (element == count.end())
-		count.insert(std::map<int, int>::value_type(number, 0));
+		count.insert(std::map<int, int>::value_type(number, 1));
 	else
 		++element->second;
 }
@@ -37,16 +37,16 @@ int main()
 	for (int i = 0; i < testCase; ++i)
 	{
 		std::cin >> x >> y;
-		insert(countX, x);
-		insert(countY, y);
+		increaseCount(countX, x);
+		increaseCount(countY, y);
 
 		std::cin >> x >> y;
-		insert(countX, x);
-		insert(countY, y);
+		increaseCount(countX, x);
+		increaseCount(countY, y);
 
 		std::cin >> x >> y;
-		insert(countX, x);
-		insert(countY, y);
+		increaseCount(countX, x);
+		increaseCount(countY, y);
 
 		resultCoords.push_back(std::pair<int, int>(getMinCount(countX), getMinCount(countY)));
 
