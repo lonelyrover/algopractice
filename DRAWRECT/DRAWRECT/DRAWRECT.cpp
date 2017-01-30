@@ -12,7 +12,7 @@ void insert(std::map<int, int>& count, int number)
 		++element->second;
 }
 
-int getMin(std::map<int, int>& count)
+int getMinCount(std::map<int, int>& count)
 {
 	int minValue = count.begin()->first, minCount = count.begin()->second;
 	for (auto element : count)
@@ -48,7 +48,7 @@ int main()
 		insert(countX, x);
 		insert(countY, y);
 
-		resultCoords.push_back(std::pair<int, int>(getMin(countX), getMin(countY)));
+		resultCoords.push_back(std::pair<int, int>(getMinCount(countX), getMinCount(countY)));
 
 		countX.clear();
 		countY.clear();
